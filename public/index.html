@@ -1,0 +1,40 @@
+<!-- public/index.html -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RPG - Demo</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 16px; }
+    .hidden { display: none; }
+    #chat { border: 1px solid #ccc; height: 300px; overflow: auto; padding: 8px; }
+  </style>
+</head>
+<body>
+  <h2>RPG — Demo Mestre / Jogador</h2>
+
+  <div id="role-select">
+    <button id="btn-master">Sou Mestre</button>
+    <button id="btn-player">Sou Jogador</button>
+  </div>
+
+  <div id="master-panel" class="hidden">
+    <p>Sala criada: <span id="room-id"></span></p>
+  </div>
+
+  <div id="player-panel" class="hidden">
+    <p>Entre com o código da sala:</p>
+    <input id="input-room" placeholder="Código da sala" />
+    <button id="btn-join">Entrar</button>
+  </div>
+
+  <h3>Chat</h3>
+  <div id="chat"></div>
+  <input id="input-msg" placeholder="Escreva a mensagem..." style="width:70%" />
+  <button id="btn-send">Enviar</button>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
